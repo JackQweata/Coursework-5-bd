@@ -1,13 +1,14 @@
 import psycopg2
+from os import getenv
 
 
 class DBManager:
     def __init__(self):
         self.__connection = psycopg2.connect(
-            host="localhost",
-            database="queries",
-            user="postgres",
-            password="123"
+            host=getenv('HH_HOST'),
+            database=getenv('HH_DATATABLE'),
+            user=getenv('HH_USER'),
+            password=getenv('HH_PASS')
         )
 
     def get_employer_id(self) -> dict:
