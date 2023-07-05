@@ -23,7 +23,7 @@ CREATE TABLE vacancies(
   title varchar(100) NOT NULL,
   price int,
   link varchar(255),
-  company_id int
+  company_id int,
 
   CONSTRAINT fk_vacancies_company_id
     FOREIGN KEY (company_id)
